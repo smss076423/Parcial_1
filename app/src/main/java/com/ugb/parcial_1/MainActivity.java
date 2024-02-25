@@ -52,15 +52,15 @@ public class MainActivity extends AppCompatActivity {
                 double agua = Double.parseDouble(tempVal.getText().toString());
 
                 double resp=0;
-                if (agua == 0){
-                    resp=0;
-                } else if (agua > 0 | agua >=18){
+                if (agua==0){
+                    resp = 0;
+                } else if (agua>0& agua <=18){
                     resp =6;
                 } else if (agua <=28) {
                     resp = ((agua -18)*0.45)+6;
                 }
-                else if (agua >=29){
-                    resp = ((agua-28)*0.65) + ((28-18)*0.45) + 6;
+                else if (agua >=29) {
+                    resp = ((agua - 28) * 0.65) + ((28 - 18) * 0.45) + 6;
                 }
 
                 tempVal = findViewById(R.id.lblresp);
