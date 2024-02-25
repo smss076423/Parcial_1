@@ -48,13 +48,17 @@ public class MainActivity extends AppCompatActivity {
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                tempVal= findViewById(R.id.lblagua);
+                tempVal= findViewById(R.id.txtAgua);
                 double agua = Double.parseDouble(tempVal.getText().toString());
 
                 double resp=0;
-                if (R.id.lblagua<=18){
+                if (agua<=18){
                     resp =6;
-
+                } else if (agua <=28) {
+                    resp = ((agua -18)*0.45)+6;
+                }
+                else if (agua >=29){
+                    resp = ((agua -18)*0.65)+6;
                 }
 
                 tempVal = findViewById(R.id.lblresp);
